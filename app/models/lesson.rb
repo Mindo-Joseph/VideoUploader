@@ -1,3 +1,3 @@
 class Lesson < ApplicationRecord
-  has_one :video
+  has_many :lesson_videos
 end

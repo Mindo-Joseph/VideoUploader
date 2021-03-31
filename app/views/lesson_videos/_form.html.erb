@@ -1,0 +1,24 @@
+<%= form_with(model: lesson_video) do |form| %>
+  <% if lesson_video.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lesson_video.errors.count, "error") %> prohibited this lesson_video from being saved:</h2>
+
+      <ul>
+        <% lesson_video.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group" data-uppy="lesson_video[video]">
+    <%= form.label :video %>
+   
+
+    <%= link_to "Upload", "#", data: { behavior: "uppy-trigger" } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_lesson_video_path(@lesson_video) %> |
+<%= link_to 'Back', lesson_videos_path %>
+<% if @lesson_video.video.attached? %>
+<%= video_tag rails_blob_path(@lesson_video.video), controls: true, size: "280x280" %>
+<% else %>
+    <p>Nothing to see</p>
+<% end %>
